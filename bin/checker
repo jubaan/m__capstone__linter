@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'ripper'
+require 'pp'
+require_relative '../lib/metrics'
+
+include Rules
+
+file = File.new(ARGV.first)
+
+line_length(file)
+white_trailing_space(file)
