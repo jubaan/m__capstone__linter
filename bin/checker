@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
-require 'ripper'
-require 'pp'
-require_relative '../lib/metrics'
 
-include Rules
+require_relative '../lib/document.rb'
+require_relative '../lib/scanner.rb'
 
-file = File.new(ARGV.first)
+path = ARGV.first
 
-line_length(file)
-white_trailing_space(file)
+document = Document.new(path)
+
+content = document.read_document
+
+scan_content = Scanner.new(content)
+
+scan_content.error_scan

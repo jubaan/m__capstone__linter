@@ -1,4 +1,4 @@
-# Project Name
+# CSS Linter
 
 > One paragraph statement about the project.
 
