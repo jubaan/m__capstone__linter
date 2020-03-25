@@ -1,7 +1,7 @@
 require 'strscan'
-require_relative './rules.rb'
+require_relative './checks.rb'
 
-class Scanner < StringScanner
+class Scanner
   attr_reader :content
 
   include Checks

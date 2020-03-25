@@ -11,7 +11,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:#{line_string.index(/(\s+\n)$/)}] " + 'TrailingSpaceError'.red + ': Line ending with white space'
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(\s+\n)$/)}] " + 'TrailingSpaceError'.red + ': white trailing space'
     end
   end
 
@@ -24,7 +24,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:#{line_string.index(/(:\w+)/)}] " + 'NoSpaceError'.red + ": no space between the ':' colon and the value"
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(:\w+)/)}] " + 'NoSpaceError'.red + ": no space after the ':' colon"
     end
   end
 
@@ -37,7 +37,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:#{line_string.index(/(\s+:)/)}] " + 'SpaceError'.red + ": Adding white space between property ':' colon"
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(\s+:)/)}] " + 'SpaceError'.red + ": white space before ':' colon"
     end
   end
 
@@ -50,7 +50,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:#{line_string.index(/(\s+;)/)}] " + 'SpaceError'.red + ": white space before ';' semicolon"
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(\s+;)/)}] " + 'SpaceError'.red + ": white space before ';' semicolon"
     end
   end
 
@@ -63,7 +63,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:0] " + 'NoIndentError'.red + ': no two space indentation at the beginning of the line'
+      "#{ARGF.filename.white} [#{line_index + 1}:0] " + 'NoIndentError'.red + ': use two space indentation'
     end
   end
 
@@ -76,7 +76,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:#{line_string.index(/(\n)$/)}] " + 'NoSemiColonError'.red + ": line without ending ';' semicolon"
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(\n)$/)}] " + 'NoSemiColonError'.red + ": missing ending ';' semicolon"
     end
   end
 
@@ -89,7 +89,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white}[#{line_index + 1}:0] " + 'NoEndFileBlancLine'.red + ': file not ending with blanc line'
+      "#{ARGF.filename.white} [#{line_index + 1}:0] " + 'NoEndFileBlancLine'.red + ': file not ending with blanc line'
     end
   end
 end
