@@ -34,13 +34,13 @@ module Checks
   end
 
   def space_before_semicolon?(str, idx)
-    raise SpaceBeforeSCError.new(str, idx) if str.match?(/( ;)/)
+    raise SpaceBeforeSCError.new(str, idx) if str.match?(/( ;)+/)
   rescue SpaceBeforeSCError => e
     e.message
   end
 
   def space_before_open_bracket?(str, idx)
-    raise SpaceBeforeOPError.new(str, idx) unless str.match?(/(\w+ {)/)
+      raise SpaceBeforeOPError.new(str, idx) if str.include?('{') && !str.match?(/( {)/)
   rescue SpaceBeforeOPError => e
     e.message
   end

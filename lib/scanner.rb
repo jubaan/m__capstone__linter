@@ -19,7 +19,6 @@ class Scanner
       (Thread.current[:errors] ||= []) << end_semicolon?(str, idx)
       (Thread.current[:errors] ||= []) << white_trailing_space?(str, idx)
       (Thread.current[:errors] ||= []) << space_before_open_bracket?(str, idx)
-      # closing_bracket?(str, idx)
     end
   end
 end
