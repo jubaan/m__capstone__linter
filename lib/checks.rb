@@ -40,7 +40,7 @@ module Checks
   end
 
   def space_before_open_bracket?(str, idx)
-      raise SpaceBeforeOPError.new(str, idx) if str.include?('{') && !str.match?(/( {)/)
+    raise SpaceBeforeOPError.new(str, idx) if str.include?('{') && !str.match?(/( {)/)
   rescue SpaceBeforeOPError => e
     e.message
   end
