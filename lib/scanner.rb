@@ -11,14 +11,15 @@ class Scanner
   end
 
   def error_scan
-    content.each_with_index do |line_string, line_index|
-      (Thread.current[:errors] ||= []) << indent?(line_string, line_index)
-      (Thread.current[:errors] ||= []) << space_before_colon?(line_string, line_index)
-      (Thread.current[:errors] ||= []) << space_after_colon?(line_string, line_index)
-      (Thread.current[:errors] ||= []) << space_before_semicolon?(line_string, line_index)
-      (Thread.current[:errors] ||= []) << end_semicolon?(line_string, line_index)
-      (Thread.current[:errors] ||= []) << white_trailing_space?(line_string, line_index)
-      # closing_bracket?(line_string, line_index)
+    content.each_with_index do |str, idx|
+      (Thread.current[:errors] ||= []) << indent?(str, idx)
+      (Thread.current[:errors] ||= []) << space_before_colon?(str, idx)
+      (Thread.current[:errors] ||= []) << space_after_colon?(str, idx)
+      (Thread.current[:errors] ||= []) << space_before_semicolon?(str, idx)
+      (Thread.current[:errors] ||= []) << end_semicolon?(str, idx)
+      (Thread.current[:errors] ||= []) << white_trailing_space?(str, idx)
+      (Thread.current[:errors] ||= []) << space_before_open_bracket?(str, idx)
+      # closing_bracket?(str, idx)
     end
   end
 end
