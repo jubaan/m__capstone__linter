@@ -10,3 +10,5 @@ content = document.read_document
 scan_content = Scanner.new(content)
 
 scan_content.error_scan
+
+puts Thread.current[:errors].compact

@@ -14,7 +14,7 @@ RSpec.describe Checks do
 
     it "Doesn't raise any error nor message" do
       str = 'hello world!'
-      expect(white_trailing_space?(str, 1)).to eq(nil)
+      expect{white_trailing_space?(str, 1)}.not_to raise_error
     end
   end
 end

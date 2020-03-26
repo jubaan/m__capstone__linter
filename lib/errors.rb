@@ -11,7 +11,7 @@ module SyntaxErrors
     end
 
     def message
-      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.index(/(\s+\n)$/)}] " + 'TrailingSpaceError'.red + ': white trailing space'
+      "#{ARGF.filename.white} [#{line_index + 1}:#{line_string.size}] " + 'TrailingSpaceError'.red + ': white trailing space'
     end
   end
 
