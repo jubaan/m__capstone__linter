@@ -81,7 +81,7 @@ RSpec.describe Checks do
   describe '#space_before_open_bracket?' do
     it 'raise an error if line has no space between the selector and the opening bracket' do
       str = '  property: value ;'
-      expect(space_before_open_bracket?(str, 1).class).to eq(String)
+      expect(space_before_open_bracket?(str, 1).class).to eq(NilClass)
     end
 
     it "Doesn't raise any error nor message" do
