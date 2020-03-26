@@ -92,18 +92,5 @@ module SyntaxErrors
       "#{ARGF.filename.white} [#{idx + 1}:#{str.index(/(\n)$/)}] " + 'SpaceBeforeOPError'.red + ": missisng space before '{' opening bracket"
     end
   end
-
-  class NoEndFileBlancLine < StandardError
-    attr_reader :str, :idx
-
-    def initialize(str, idx)
-      @str = str
-      @idx = idx
-    end
-
-    def message
-      "#{ARGF.filename.white} [#{idx + 1}:0] " + 'NoEndFileBlancLine'.red + ': file not ending with blanc line'
-    end
-  end
 end
 # rubocop:enable Layout/LineLength
